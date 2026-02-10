@@ -7,15 +7,21 @@
     <title>Document</title>
 </head>
 <body>
+      <nav class="nav">
+        <a href="welcome.html" class="active">Welcome</a>
+        <a href="about me.html">About</a>
+        <a href="index.html">Crud App</a>
+    </nav>
+    
     <div class="crud">
         <div class="head">
           <h2>crud</h2>
           <p>product management</p>
         </div>
         <div class="inputs">
-            <input placeholder="title" type="text " id="title">
+            <input placeholder="title(Must)" type="text " id="title">
             <div class="price">
-                <input onkeyup="getTotal()" placeholder="price" type="number" id="price"
+                <input onkeyup="getTotal()" placeholder="price(Must)" type="number" id="price"
                 >
 
                 <input onkeyup="getTotal()"  placeholder="taxes" type="number" id="taxes"
@@ -31,15 +37,15 @@
 
                 </div>
                 <input placeholder="count" type="number" id="count">
-                 <input placeholder="category" type="text" id="category">
+                 <input placeholder="category(Must)" type="text" id="category">
                  <button id="submit">Create</button>
         </div>
         <div class="outputs">
             <div class="searchBox">
-                <input placeholder="search" type="text" id="search">
+                <input onkeyup="searchData(this.value)" placeholder="search" type="text" id="search">
                 <div class="btnSearch">
-                    <button id="searchTitle">search By Title</button>
-                     <button id="searchCategory">search By Category</button>
+                    <button onclick="getSearchMode(this.id)" id="searchTitle">search By Title</button>
+                     <button onclick="getSearchMode(this.id)" id="searchCategory">search By Category</button>
                 </div>
             </div>
            
@@ -66,5 +72,6 @@
         </div>
     </div>
     <script src="main.js"></script>
+
 </body>
 </html>
